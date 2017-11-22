@@ -1,0 +1,13 @@
+<p>Référence: {{ item.reference }}</p>
+<p>Nom du client: {{ item.name }}</p>
+
+<!-- exemple d'événement -->
+<a href (click)="getDetails($event)" id="{{ item.reference }}">Détails</a>
+
+<!-- exemple d'utilisation de *ngIf -->
+<!-- exemple d'utilisation des styles css -->
+<p class="state-0" *ngIf="0 == item.state">Commande à livrer</p>
+<p class="state-1" *ngIf="1 == item.state">Commande en cours de livraison</p>
+<p class="state-2" *ngIf="2 == item.state">Commande livré</p>
+
+<hr />
