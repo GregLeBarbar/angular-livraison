@@ -22,16 +22,15 @@ export class AppComponent {
     this.newItem = this.resetNewItem();
   }
 
-  resetNewItem() {
+  resetNewItem() { 
     return new Item({reference: '', name: '', state: 0});
   }
 
   onGetDetails(item: Item) {
-    console.log(item)    
+    console.log(item);
   }
 
-  createCommand() {
-    this.collection.push(this.newItem);
-    this.resetNewItem();
+  onCreateItem(item: Item) {
+    this.collection.push(item);
   }
 }

@@ -6,22 +6,7 @@
 
 </div>
 
-<form #itemForm="ngForm">
-
-  Référence: <input [(ngModel)]="newItem.reference" name="reference" minlength="4" required #reference="ngModel" />
-  <span [hidden]="reference.valid || reference.pristine">Champ non valide</span>
-
-  Nom du client: <input [(ngModel)]="newItem.name" name="name" required #name="ngModel"/>
-  <span [hidden]="name.valid || name.pristine">Champ non valide</span>
-
-  État: <input [(ngModel)]="newItem.state" name="state" required #state />
-  <span [hidden]="state.valid || state.pristine">Champ non valide</span>
-
-  <!-- exemple d'événement -->
-  <button [disabled]="!itemForm.form.valid" (click)="createCommand()">Ajouter une commande</button>
-
-</form>
-
+<item-form (onCreateItem)="onCreateItem($event)"></item-form>
 
 <div>
   <!-- exemple d'utilisation du filtre json pour debuger une liste d'objets -->

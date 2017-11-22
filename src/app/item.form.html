@@ -1,0 +1,15 @@
+<form #itemForm="ngForm">
+        
+    Référence: <input [(ngModel)]="item.reference" name="reference" minlength="4" required #reference="ngModel" />
+    <span [hidden]="reference.valid || reference.pristine">Champ non valide</span>
+
+    Nom du client: <input [(ngModel)]="item.name" name="name" required #name="ngModel"/>
+    <span [hidden]="name.valid || name.pristine">Champ non valide</span>
+
+    État: <input [(ngModel)]="item.state" name="state" required #state />
+    <span [hidden]="state.valid || state.pristine">Champ non valide</span>
+
+    <!-- exemple d'événement -->
+    <button [disabled]="!itemForm.form.valid" (click)="createItem()">Ajouter une commande</button>
+
+</form>
