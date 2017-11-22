@@ -68,13 +68,16 @@ Centraliser les constantes dans un fichier de config.ts
 - la notation # permet de créer une variable locale
 - pristine jamais entré dans un champ
 
-## 1er Sous composant (= composant enfant = directive)
+## Sous composant (= composant enfant = directive)
 
 - Création d'un composant enfant
-- communication parent => enfant : utilisation de @input
-- communication enfant => parent : utilisation de @ouput
+- communication parent => enfant : utilisation de @input()
+- communication enfant => parent : utilisation de @ouput()
 
+## Filtre
 
+- utilisation du filtre uppercase
+- creation d'un custom filtre
 
 ## Angular readme
 

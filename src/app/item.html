@@ -1,5 +1,6 @@
 <p>Référence: {{ item.reference }}</p>
-<p>Nom du client: {{ item.name }}</p>
+
+<p>Nom du client: {{ item.name | uppercase }}</p>
 
 <!-- exemple d'événement -->
 <a href (click)="getDetails($event)" id="{{ item.reference }}">Détails</a>
