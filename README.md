@@ -24,6 +24,26 @@ La page http://localhost:4200/ se lance dans votre navigateur.
 
 On est prêt pour commencer à coder !
 
+## bases 
+
+On a vue comment modifier le AppComponent :
+- créer des attributs avec des types et de l'accessibilité (private, public, protected)
+- un construteur
+
+On a vue dans le template :
+- passer des variables au template {{ }}
+- *ngFor
+- *ngIf
+- parcourir un objet dans le template
+
+On a vue comment gérer les styles css.
+
+## Événement
+
+Exemple de 2 événements :
+- createCommand()
+- getDetails()
+
 
 
 ## Angular readme

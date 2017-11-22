@@ -6,6 +6,9 @@
 
 </div>
 
+<!-- exemple d'événement -->
+<button (click)="createCommand()">Ajouter une commande</button>
+
 <hr />
 
 <!-- exemple de parcourt du liste d'objets avec *ngFor-->
@@ -13,6 +16,9 @@
 
   <p>Référence: {{ item.reference }}</p>
   <p>Nom du client: {{ item.name }}</p>
+
+  <!-- exemple d'événement -->
+  <a href (click)="getDetails($event, 'info_en_plus')" id="{{ item.reference }}">Détails</a>
   
   <!-- exemple d'utilisation de *ngIf -->
   <!-- exemple d'utilisation des styles css -->
