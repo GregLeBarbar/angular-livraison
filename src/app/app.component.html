@@ -6,8 +6,17 @@
 
 </div>
 
+Référence: <input [(ngModel)]="newItem.reference" />
+Nom du client: <input [(ngModel)]="newItem.name" />
+État: <input [(ngModel)]="newItem.state" />
+
 <!-- exemple d'événement -->
 <button (click)="createCommand()">Ajouter une commande</button>
+
+<div>
+  <!-- exemple d'utilisation du filtre json pour debuger une liste d'objets -->
+  {{ newItem | json }}
+</div>
 
 <hr />
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Event } from '_debugger';
+import { Component } from '@angular/core'; 
+import { Item } from './models/item';
 
 @Component({
   selector: 'app-root',
@@ -10,17 +10,25 @@ export class AppComponent {
 
   private title: string;
   private version: string;
-  private collection: [any];
+  private collection: [Item];
+  private reference: string;
+  private newItem: Item;
 
   constructor() {
 
     this.title = 'Salut à tous !';
     this.version = '1.0';
+    this.reference = '';
     this.collection = [
-      {reference: '1234', name: 'Greg', state: 0},
-      {reference: '3456', name: 'Elodie', state: 1},
-      {reference: '3456', name: 'Julien', state: 2},
-    ]
+      new Item({reference: '1234', name: 'Greg', state: 0}),
+      new Item({reference: '3456', name: 'Elodie', state: 1}),
+      new Item({reference: '3456', name: 'Julien', state: 2}),
+    ];
+    this.newItem = this.resetNewItem();
+  }
+
+  resetNewItem() {
+    return new Item({reference: '', name: '', state: 0});
   }
 
   getDetails(event: Event, parameter: string) {
@@ -29,7 +37,7 @@ export class AppComponent {
     // lorsque l'on clique sur le lien
     event.preventDefault();
 
-    // exemple de passage d'info supplémentaire 
+    // Exemple de passage d'info supplémentaire 
     // en ajoutant un paramètre
     console.log(parameter);
 
@@ -38,12 +46,12 @@ export class AppComponent {
     // et ici on récupère la valeur de l'attribut id.
     // Mais c'est de la bidouille ... l'utilisation des modèles est la version recommandée
     let element = event.target || event.srcElement || event.currentTarget;
-    console.log("La réféence de l'objet est: ", element.attributes.id.value);
+    //console.log("La référence de l'objet est: ", element.attributes.id.value);
 
   }
 
   createCommand() {
-    let command = {reference: '9999', name: 'Julien', state: 2};
-    this.collection.push(command);
+    this.collection.push(this.newItem);
+    this.resetNewItem();
   }
 }

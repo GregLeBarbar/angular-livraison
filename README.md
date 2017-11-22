@@ -38,13 +38,26 @@ On a vue dans le template :
 
 On a vue comment gérer les styles css.
 
-## Événement
+## Événements
 
 Exemple de 2 événements :
 - createCommand()
 - getDetails()
 
+la notation () permet de communiquer du template vers le composant
 
+## Modèles
+
+la notation [] permet de communiquer du composant vers le template
+la notation [(ngModel)] permet de faire du binding dans les 2 sens (data binding)
+
+Pour faire fonctionner le binding dans les 2 sens,
+j'ai du ajouter au fichier 'app.module.ts' :
+import { FormsModule } from '@angular/forms';
+et ajouter FormsModule ici :
+ imports: [
+    BrowserModule, FormsModule
+  ],
 
 ## Angular readme
 
