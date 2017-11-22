@@ -1,5 +1,33 @@
 # Livraison
 
+## Installer l'environnement de développement
+
+Commençons par générer notre projet :
+
+ng new livraison
+
+Se placer dans le répertoire livraison.
+
+cd livraison
+
+Ensuite on doit installer les librairies :
+
+npm install 
+
+Cette commande lit le fichier package.json et install toutes les librairies présentes dans ce fichier.
+
+Ensuite on lance notre server :
+
+ng serve --open
+
+La page http://localhost:4200/ se lance dans votre navigateur.
+
+On est prêt pour commencer à coder !
+
+
+
+## Angular readme
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
 
 ## Development server
