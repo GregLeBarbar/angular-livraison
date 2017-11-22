@@ -63,6 +63,12 @@ et ajouter FormsModule ici :
 
 Centraliser les constantes dans un fichier de config.ts
 
+## Création d'un formulaire
+
+- la notation # permet de créer une variable locale
+- pristine jamais entré dans un champ
+
+
 ## Angular readme
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
