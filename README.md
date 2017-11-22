@@ -46,7 +46,7 @@ Exemple de 2 événements :
 
 la notation () permet de communiquer du template vers le composant
 
-## Modèles
+## Modèles et data-binding
 
 la notation [] permet de communiquer du composant vers le template
 la notation [(ngModel)] permet de faire du binding dans les 2 sens (data binding)
@@ -58,6 +58,10 @@ et ajouter FormsModule ici :
  imports: [
     BrowserModule, FormsModule
   ],
+
+## Gestion des constantes
+
+Centraliser les constantes dans un fichier de config.ts
 
 ## Angular readme
 

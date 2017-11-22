@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'; 
 import { Item } from './models/item';
+import { Config } from './config';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +12,13 @@ export class AppComponent {
   private title: string;
   private version: string;
   private collection: [Item];
-  private reference: string;
   private newItem: Item;
 
   constructor() {
 
-    this.title = 'Salut à tous !';
-    this.version = '1.0';
-    this.reference = '';
-    this.collection = [
-      new Item({reference: '1234', name: 'Greg', state: 0}),
-      new Item({reference: '3456', name: 'Elodie', state: 1}),
-      new Item({reference: '3456', name: 'Julien', state: 2}),
-    ];
+    this.title = Config.APP_TITLE;
+    this.version = Config.APP_VERSION;
+    this.collection = Config.APP_FAKE_COLLECTIOn;
     this.newItem = this.resetNewItem();
   }
 
