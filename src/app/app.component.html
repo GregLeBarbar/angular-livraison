@@ -1,28 +1,28 @@
-<div style="text-align:center">
-
+<div class="header text-center">
   <!-- exemple du passage d'une variable d'un composant au template -->
   <h1>{{ title }}</h1>
   <span>Version: {{ version }}</span>
-  
+  <hr />
 </div>
 
 <item-form (onCreateItem)="onCreateItem($event)"></item-form>
 
-<div>
+<div class="debug">
   <!-- exemple d'utilisation du filtre json pour debuger une liste d'objets -->
-  {{ newItem | json }}
+  DEBUG : {{ newItem | json }}
 </div>
 
 <hr />
 
-Filtrer: <input #listFilter (keyup)="0" />
-
+<div class="filter-box">
+  Filtrer les commandes par le nom des clients: <input class="form-control" #listFilter (keyup)="0" />
+</div>
 <!-- exemple de parcourt du liste d'objets avec *ngFor-->
 <div *ngFor="let item of collection | itemFilter:listFilter.value">
   <item [item]="item" (onGetDetails)="onGetDetails($event)"></item>
 </div>
 
-<div>
+<div class="debug">
   <!-- exemple d'utilisation du filtre json pour debuger une liste d'objets -->
-  {{ collection | json }}
+  DEBUG : {{ collection | json }}
 </div>

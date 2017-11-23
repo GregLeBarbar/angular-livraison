@@ -19,11 +19,11 @@ export class AppComponent {
     this.title = Config.APP_TITLE;
     this.version = Config.APP_VERSION;
     this.collection = Config.APP_FAKE_COLLECTIOn;
-    this.newItem = this.resetNewItem();
+    this.resetNewItem();
   }
 
   resetNewItem() { 
-    return new Item({reference: '', name: '', state: 0});
+    this.newItem = new Item({reference: '', name: '', state: 0});
   }
 
   onGetDetails(item: Item) {

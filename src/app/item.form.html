@@ -1,15 +1,19 @@
+<h3>Ajouter une commande</h3>
 <form #itemForm="ngForm">
-        
-    Référence: <input [(ngModel)]="item.reference" name="reference" minlength="4" required #reference="ngModel" />
-    <span [hidden]="reference.valid || reference.pristine">Champ non valide</span>
-
-    Nom du client: <input [(ngModel)]="item.name" name="name" required #name="ngModel"/>
-    <span [hidden]="name.valid || name.pristine">Champ non valide</span>
-
-    État: <input [(ngModel)]="item.state" name="state" required #state />
-    <span [hidden]="state.valid || state.pristine">Champ non valide</span>
-
+    <div class="form-group">
+        Référence: <input class="form-control" [(ngModel)]="item.reference" name="reference" minlength="4" required #reference="ngModel" placeholder="Référence ex. 1234" />
+        <span class="alert alert-danger" [hidden]="reference.valid || reference.pristine">Champ non valide</span>
+    </div>
+    <div class="form-group">
+        Nom du client: <input class="form-control" [(ngModel)]="item.name" name="name" required #name="ngModel" placeholder="Nom et prénom du client"/>
+        <span class="alert alert-danger" [hidden]="name.valid || name.pristine">Champ non valide</span>
+    </div>
+    <div class="form-group">
+        État: <input class="form-control" [(ngModel)]="item.state" name="state" required #state />
+        <span class="alert alert-danger" [hidden]="!state.valid">Champ non valide</span>
+    </div>
+    
     <!-- exemple d'événement -->
-    <button [disabled]="!itemForm.form.valid" (click)="createItem()">Ajouter une commande</button>
+    <button class="btn btn-primary" [disabled]="!itemForm.form.valid" (click)="createItem()">Ajouter une commande</button>
 
 </form>

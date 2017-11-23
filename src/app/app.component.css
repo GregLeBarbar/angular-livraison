@@ -1,3 +1,17 @@
+.header {
+    margin-bottom: 2em;
+}
+
+.debug {
+    background:  rgb(224, 75, 100);
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.filter-box {
+    margin-bottom: 20px;
+}
+
 .state-0 {
     color: red;
 }

@@ -79,6 +79,20 @@ Centraliser les constantes dans un fichier de config.ts
 - utilisation du filtre uppercase
 - creation d'un custom filtre
 
+## Bootstrap 
+
+yarn add --exact bootstrap@4.0.0-beta.2 font-awesome
+npm install
+ng serve --open
+Modifier le fichier .angular-cli.json
+
+"styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.min.css",
+        "styles.css"
+      ],
+
+
 ## Angular readme
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.
