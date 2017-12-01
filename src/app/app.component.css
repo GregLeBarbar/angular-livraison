@@ -21,3 +21,11 @@
 .state-2 {
     color: green;
 }
+
+
+.text-left {
+    float: left;
+}
+.pull-right {
+    float: right;
+}

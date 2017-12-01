@@ -5,6 +5,7 @@
   <hr />
 </div>
 
+<!-- lorsque l'événement onCreateItem est émit, la méthode onCreateItem est appelée -->
 <item-form (onCreateItem)="onCreateItem($event)"></item-form>
 
 <div class="debug">
@@ -19,6 +20,9 @@
 </div>
 <!-- exemple de parcourt du liste d'objets avec *ngFor-->
 <div *ngFor="let item of collection | itemFilter:listFilter.value">
+
+  <!-- item est passé du parent à l'enfant-->
+  <!-- lorsque l'événement onGetDetails est émit, la méthode onCreateItem est appelée -->
   <item [item]="item" (onGetDetails)="onGetDetails($event)"></item>
 </div>
 
