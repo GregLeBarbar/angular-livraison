@@ -3,7 +3,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+import { TitleModule } from './title/title.module';
+
 import { AppComponent } from './app.component';
+
 import { Item as ItemComponent } from './item';
 import { ItemForm as ItemFormComponent } from './item.form';
 import { ItemPipe } from './pipes/item.filter';
@@ -20,7 +23,7 @@ import { ItemPipe } from './pipes/item.filter';
     ItemPipe, // Pipe pour filtrer les éléments sur le nom du client
   ],
   imports: [
-    BrowserModule, FormsModule, BrowserAnimationsModule
+    BrowserModule, FormsModule, BrowserAnimationsModule, TitleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

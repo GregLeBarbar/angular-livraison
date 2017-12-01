@@ -1,7 +1,6 @@
 import { Component } from '@angular/core'; 
 import { Item } from './models/item';
 import { Config } from './config';
-import { setTimeout } from 'timers';
 
 /**
  * Le composant AppComponent est le composant principal.
@@ -13,14 +12,9 @@ import { setTimeout } from 'timers';
 })
 export class AppComponent {
 
-  private title: string;
-  private version: string;
   private collection: [Item];
 
   constructor() {
-
-    this.title = Config.APP_TITLE;
-    this.version = Config.APP_VERSION;
     this.collection = Config.APP_FAKE_COLLECTION;
   }
 
