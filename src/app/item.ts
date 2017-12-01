@@ -1,10 +1,38 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'; 
+import { Component, Input, Output, EventEmitter} from '@angular/core';
+
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition
+} from '@angular/animations';
+
 import { Item as ItemModel } from './models/item';
 
 @Component({
   selector: 'item',
   templateUrl: './item.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('itemAnimationState', [
+      state('inactive', style({color: 'red'})),
+      state('active', style({color: 'blue'})),
+
+      // Je ne parviens pas à faire fonctionner la transition inactive <=> active
+      // cela devrait passer du rouge => au bleu puis du bleu => au rouge
+      // Mais cela ne marche que si je click une deuxième fois 
+
+
+      transition('void => *', [
+        style({transform: 'translateX(-100%)'}),
+        animate(1000)
+      ]),
+      transition('* => void', [
+        animate(1000, style({transform: 'translateX(100%)'}))
+      ]),
+    ])
+  ]
 })
 export class Item {
 
@@ -15,6 +43,7 @@ export class Item {
     // défini l'événement onGetDetails
     // => communication enfant => parent
     @Output() onGetDetails = new EventEmitter();
+    @Output() onDeleteItem = new EventEmitter();
 
     getDetails(event: Event) {
       
@@ -28,6 +57,12 @@ export class Item {
     
     changeState(event: Event, state: number) {
       event.preventDefault();
-      this.item.state = state;
+      this.item.state = state; 
     }
+
+    deleteItem(event: Event) {
+      event.preventDefault();
+      this.onDeleteItem.emit(this.item)
+    }
+
 }

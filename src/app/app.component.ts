@@ -1,6 +1,7 @@
 import { Component } from '@angular/core'; 
 import { Item } from './models/item';
 import { Config } from './config';
+import { setTimeout } from 'timers';
 
 /**
  * Le composant AppComponent est le composant principal.
@@ -40,6 +41,17 @@ export class AppComponent {
    * @param item 
    */
   onCreateItem(item: Item) {
-    this.collection.push(item);
+    this.collection.unshift(item);
+  }
+
+  onDeleteItem(item: Item) {
+
+    item.animateState = 'removed';
+        
+    setTimeout( () => {
+      const index = this.collection.indexOf(item);
+      this.collection.splice(index, 1);  
+    }, 3000);
+    
   }
 }

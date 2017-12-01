@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" *ngIf="item.animateState !== 'removed'" [@itemAnimationState]="item.animateState" (click)="item.toogleAnimateState()">
     <div class="card-header">
         <span class="text-left">Référence: {{ item.reference }}</span>
         <!-- exemple d'utilisation de *ngIf -->
@@ -20,6 +20,7 @@
             <!-- exemple d'événement -->
             Afficher le <a href (click)="getDetails($event)" id="{{ item.reference }}">détails </a> de la commande
         </div>
+        <a href (click)="deleteItem($event)">Supprimer</a>
     <hr />
     </div>
 </div>

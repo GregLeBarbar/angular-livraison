@@ -23,7 +23,7 @@
 
   <!-- item est passé du parent à l'enfant-->
   <!-- lorsque l'événement onGetDetails est émit, la méthode onCreateItem est appelée -->
-  <item [item]="item" (onGetDetails)="onGetDetails($event)"></item>
+  <item [item]="item" (onGetDetails)="onGetDetails($event)" (onDeleteItem)="onDeleteItem($event)"></item>
 </div>
 
 <div class="debug">
